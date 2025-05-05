@@ -15,8 +15,10 @@ public class Main {
 
     void start(){
         Scanner scanner = new Scanner(System.in);
+        String input = "";
 
         while (!terminate) {
+            handle_input(input);
             Helper.clear_screen();
             System.out.println("Enter a selection:");
             System.out.println("1) View deadline tasks");
@@ -27,9 +29,7 @@ public class Main {
             //System.out.println("6) Mark task as complete");
             System.out.println("7) Quit the program");
 
-            String input = scanner.nextLine();
-
-            handle_input(input);
+            input = scanner.nextLine();
 
         }
 
