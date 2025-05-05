@@ -10,6 +10,8 @@ public class Main {
         Helper.clear_screen();
         Main game_loop = new Main();
 
+        game_loop.tasks.addTask(new SimpleTask("Finish Project", "finish this tasks project"));
+
         game_loop.start();
     }
 
@@ -18,18 +20,20 @@ public class Main {
         String input = "";
 
         while (!terminate) {
-            handle_input(input);
-            Helper.clear_screen();
             System.out.println("Enter a selection:");
             System.out.println("1) View deadline tasks");
-            //System.out.println("2) View simple tasks");
+            System.out.println("2) View simple tasks");
             //System.out.println("3) View completed tasks");
             //System.out.println("4) Delete a task");
-            //System.out.println("5) Add a task");
+            System.out.println("5) Add a task");
             //System.out.println("6) Mark task as complete");
             System.out.println("7) Quit the program");
 
             input = scanner.nextLine();
+
+            Helper.clear_screen();
+
+            handle_input(input);
 
         }
 
@@ -43,6 +47,7 @@ public class Main {
                 break;
 
             case "2":
+                tasks.display_task_type("SimpleTask");
                 break;
 
             case "3":
@@ -52,6 +57,7 @@ public class Main {
                 break;
 
             case "5":
+                tasks.createNewTask();
                 break;
 
             case "6":

@@ -2,16 +2,30 @@
 public class SimpleTask {
     private String type = "SimpleTask";
     private String name;
-    private String description;
+    private String description ;
 
     SimpleTask(String name, String description){
         this.name = name;
         this.description = description;
     }
 
+    SimpleTask() {
+        this.name = "Default Name";
+        this.description = "Default Description";
+    }
+
     public String getType(){
         return this.type;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDesc(String name) {
+        this.description = name;
+    }
+
 
     public String getDescription() {
         return description;
@@ -44,6 +58,11 @@ class DeadLineTask extends SimpleTask {
         super(name, description);
         this.due_date = due_date;
         this.assigner = assigner;
+    }
+
+    DeadLineTask() {
+        this.due_date = "Default Due Date";
+        this.assigner = "Default Assigner";
     }
 
     public String get_due_date() {
