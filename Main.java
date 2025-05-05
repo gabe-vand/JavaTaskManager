@@ -5,6 +5,7 @@ public class Main {
 
     boolean terminate = false;
     TaskBook tasks = new TaskBook();
+    Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         Helper.clear_screen();
@@ -16,7 +17,6 @@ public class Main {
     }
 
     void start(){
-        Scanner scanner = new Scanner(System.in);
         String input = "";
 
         while (!terminate) {
@@ -57,7 +57,7 @@ public class Main {
                 break;
 
             case "5":
-                tasks.createNewTask();
+                tasks.createNewTask(scanner);
                 break;
 
             case "6":

@@ -13,18 +13,20 @@ public class TaskBook {
         tasks.add(task);
     }
 
-    public void createNewTask() {
-        Scanner scanner = new Scanner(System.in);
+    public void createNewTask(Scanner scanner) {
 
         String input = "";
         System.out.println("Will this task be simple or have a deadline?");
+        input = scanner.nextLine();
         input = Helper.fix_text(input);
 
         if (input.equals("simple")) {
             System.out.println("Enter a task title:");
+            input = scanner.nextLine();
             String name = Helper.fix_text(input);
 
             System.out.println("Enter a task description:");
+            input = scanner.nextLine();
             String desc = Helper.fix_text(input);
 
             tasks.add(new SimpleTask(name, desc));
@@ -33,15 +35,19 @@ public class TaskBook {
 
         else if (input.equals("deadline")) {
             System.out.println("Enter a task title:");
+            input = scanner.nextLine();
             String name = Helper.fix_text(input);
 
             System.out.println("Enter a task description:");
+            input = scanner.nextLine();
             String desc = Helper.fix_text(input);
 
             System.out.println("Enter a due date:");
+            input = scanner.nextLine();
             String due = Helper.fix_text(input);
 
             System.out.println("Enter an 'assigner' (what is this task for?):");
+            input = scanner.nextLine();
             String assigner = Helper.fix_text(input);
 
             tasks.add(new DeadLineTask(name, desc, due, assigner));
@@ -50,8 +56,6 @@ public class TaskBook {
         else { 
             System.out.println("Sorry, task type not recognized. Failed to create task.");
         }
-
-        scanner.close();
 
     }
 
