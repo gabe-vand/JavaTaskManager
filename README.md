@@ -1,2 +1,2 @@
 # JavaTaskManager
-basic task managerused as practice for Java coding
+basic task manager used as practice for Java coding
