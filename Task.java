@@ -1,4 +1,3 @@
-package task_manager;
 
 public class Task {
     private String name;
@@ -15,6 +14,14 @@ public class Task {
 
     public String getName() {
         return name;
+    }
+
+    public String getFormattedTask(){
+        String result = "";
+
+        result += "Task Name: " + name + "\n" + "Description: " + description + "\n";
+
+        return result;
     }
 }
 
@@ -34,5 +41,16 @@ class DeadLineTask extends Task {
 
     public String get_assigner() {
         return assigner;
+    }
+    
+    @Override
+    public String getFormattedTask(){
+        String result = "";
+
+        result += "Task Name: " + super.getName() + "\n" + 
+        "Assigner: " + assigner + " || " + "Due: " + due_date + "\n" +
+        "Description: " + super.getDescription() + "\n";
+
+        return result;
     }
 }
